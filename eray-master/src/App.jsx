@@ -21,7 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/about" element={<AboutContent />} />
-          <Route path="/libraries/:libId" element={<LibraryContent />} />
+          <Route path="/libraries/*" element={<LibraryContent />} />
         </Routes>
       </div>
       <Footer />

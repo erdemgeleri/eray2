@@ -1,159 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { Controlled as CodeMirror } from "react-codemirror2";
-import "codemirror/lib/codemirror.css";
-import "codemirror/theme/material.css";
-
-const initialHTML = `
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Document</title>
-  <style>
-    body { font-family: Arial, sans-serif; }
-  </style>
-</head>
-<body>
-  <h1>Hello, World!</h1>
-  <button id="btn">Click me</button>
-  <div id="result"></div>
-</body>
-</html>
-`;
-
-const initialCSS = `
-body {
-  background-color: #f0f0f0;
-}
-h1 {
-  color: #333;
-}
-`;
-
-const initialJS = `
-document.getElementById('btn').addEventListener('click', function() {
-  document.getElementById('result').innerHTML = '<h2>Button Clicked!</h2>';
-});
-`;
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Library1 from "./Library1";
+import Library2 from "./Library2";
+import Library3 from "./Library3";
+import Library4 from "./Library4";
+import Library5 from "./Library5";
+import Library6 from "./Library6";
+import "./LibraryContent.css";
 
 const LibraryContent = () => {
-  const [htmlCode, setHtmlCode] = useState(initialHTML);
-  const [cssCode, setCssCode] = useState(initialCSS);
-  const [jsCode, setJsCode] = useState(initialJS);
-  const [activeTab, setActiveTab] = useState("html");
-
-  const runCode = () => {
-    try {
-      const outputElement = document.getElementById("code-output");
-      outputElement.innerHTML = "";
-
-      const htmlContent = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <style>
-            ${cssCode}
-          </style>
-        </head>
-        <body>
-          ${htmlCode}
-          <script>
-            ${jsCode}
-          <\/script>
-        </body>
-        </html>
-      `;
-
-      const blob = new Blob([htmlContent], { type: "text/html" });
-      const url = URL.createObjectURL(blob);
-
-      const iframe = document.createElement("iframe");
-      iframe.style.width = "100%";
-      iframe.style.height = "100%";
-      iframe.style.border = "none";
-      iframe.src = url;
-      outputElement.appendChild(iframe);
-
-      return () => URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Error executing code:", error);
-    }
-  };
-
-  useEffect(() => {
-    runCode();
-  }, [htmlCode, cssCode, jsCode]);
-
   return (
-    <div className="library-container">
-      <div className="code-editor">
-        <div className="tabs">
-          <button
-            className={`tab-button ${activeTab === "html" ? "active" : ""}`}
-            onClick={() => setActiveTab("html")}
-          >
-            HTML
-          </button>
-          <button
-            className={`tab-button ${activeTab === "css" ? "active" : ""}`}
-            onClick={() => setActiveTab("css")}
-          >
-            CSS
-          </button>
-          <button
-            className={`tab-button ${activeTab === "js" ? "active" : ""}`}
-            onClick={() => setActiveTab("js")}
-          >
-            JavaScript
-          </button>
-        </div>
-        <div className="code-editor-content">
-          {activeTab === "html" && (
-            <CodeMirror
-              value={htmlCode}
-              options={{
-                mode: "xml",
-                theme: "material",
-                lineNumbers: true,
-              }}
-              onBeforeChange={(editor, data, value) => {
-                setHtmlCode(value);
-              }}
-            />
-          )}
-          {activeTab === "css" && (
-            <CodeMirror
-              value={cssCode}
-              options={{
-                mode: "css",
-                theme: "material",
-                lineNumbers: true,
-              }}
-              onBeforeChange={(editor, data, value) => {
-                setCssCode(value);
-              }}
-            />
-          )}
-          {activeTab === "js" && (
-            <CodeMirror
-              value={jsCode}
-              options={{
-                mode: "javascript",
-                theme: "material",
-                lineNumbers: true,
-              }}
-              onBeforeChange={(editor, data, value) => {
-                setJsCode(value);
-              }}
-            />
-          )}
-        </div>
-        <button onClick={runCode} className="run-button">
-          Kodu Çalıştır
-        </button>
-      </div>
-      <div className="code-output" id="code-output">
-        {/* çıktı */}
-      </div>
+    <div className="library-content">
+      <Routes>
+        <Route path="lib1" element={<Library1 />} />
+        <Route path="lib2" element={<Library2 />} />
+        <Route path="lib3" element={<Library3 />} />
+        <Route path="lib4" element={<Library4 />} />
+        <Route path="lib5" element={<Library5 />} />
+        <Route path="lib6" element={<Library6 />} />
+      </Routes>
     </div>
   );
 };
