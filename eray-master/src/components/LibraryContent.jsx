@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
-import "codemirror/theme/material.css"; // Codemirror tema stili
+import "codemirror/theme/material.css";
 
-// Başlangıç kodları
 const initialHTML = `
 <!DOCTYPE html>
 <html>
@@ -40,15 +39,13 @@ const LibraryContent = () => {
   const [htmlCode, setHtmlCode] = useState(initialHTML);
   const [cssCode, setCssCode] = useState(initialCSS);
   const [jsCode, setJsCode] = useState(initialJS);
-  const [activeTab, setActiveTab] = useState("html"); // Başlangıç sekmesi
+  const [activeTab, setActiveTab] = useState("html");
 
-  // Kodun çalıştırılması ve iframe'e yazdırılması
   const runCode = () => {
     try {
       const outputElement = document.getElementById("code-output");
-      outputElement.innerHTML = ""; // Önceki içeriği temizle
+      outputElement.innerHTML = "";
 
-      // HTML içeriğini oluşturun
       const htmlContent = `
         <!DOCTYPE html>
         <html>
@@ -66,11 +63,9 @@ const LibraryContent = () => {
         </html>
       `;
 
-      // HTML içeriğini bir Blob nesnesi olarak oluşturun
       const blob = new Blob([htmlContent], { type: "text/html" });
       const url = URL.createObjectURL(blob);
 
-      // Blob URL'yi kullanarak bir iframe oluşturun
       const iframe = document.createElement("iframe");
       iframe.style.width = "100%";
       iframe.style.height = "100%";
@@ -78,14 +73,12 @@ const LibraryContent = () => {
       iframe.src = url;
       outputElement.appendChild(iframe);
 
-      // URL'yi temizleyin
       return () => URL.revokeObjectURL(url);
     } catch (error) {
       console.error("Error executing code:", error);
     }
   };
 
-  // Kod değiştiğinde çalıştır
   useEffect(() => {
     runCode();
   }, [htmlCode, cssCode, jsCode]);
@@ -159,7 +152,7 @@ const LibraryContent = () => {
         </button>
       </div>
       <div className="code-output" id="code-output">
-        {/* Kodun çıktısı burada gösterilecek */}
+        {/* çıktı */}
       </div>
     </div>
   );

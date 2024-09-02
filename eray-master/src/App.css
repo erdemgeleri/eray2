@@ -52,11 +52,11 @@ a {
 .anasayfa {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Minimum height to push footer to the bottom */
+  min-height: 100vh;
   color: #ffffff;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("assets/site_arkaplanson.png"); /* Ana sayfa arka plan resmi */
+    url("assets/site_arkaplanson.png");
   background-position: center;
   background-size: cover;
   padding: 1px;
@@ -136,7 +136,7 @@ a {
 
 .hakkimda {
   display: flex;
-  background-image: url("./assets/sitearkaplan.png"); /* Hakkımda arka plan resmi */
+  background-image: url("./assets/sitearkaplan.png");
   background-position: center;
   background-size: cover;
   align-items: center;
@@ -282,7 +282,6 @@ code {
   flex: 1;
 }
 
-/* Genel kapsayıcı */
 .library-container {
   display: flex;
   height: 100vh;
