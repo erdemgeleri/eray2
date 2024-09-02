@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #b82125;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #b82125;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.anasayfa {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Minimum height to push footer to the bottom */
+  color: #ffffff;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("assets/site_arkaplanson.png"); /* Ana sayfa arka plan resmi */
+  background-position: center;
+  background-size: cover;
+  padding: 1px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 550px;
+  margin-top: 10px;
+}
+
+.logo img {
+  width: 250px;
+}
+
+.kullanicigiris {
+  display: block;
+}
+
+.kullanicigiris a {
+  transition: 0.2s;
+  margin-left: 20px;
+  color: #b82125;
+  border-bottom: 3px solid transparent;
+}
+
+.kullanicigiris a:hover {
+  border-bottom: 3px solid #b82125;
+  padding-bottom: 10px;
+}
+
+.yazilar {
+  margin-top: 200px;
+  height: 367px;
+  width: 700px;
+  align-items: center;
+}
+
+.rosso h2 {
+  font-size: 51px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-left: 80px;
+}
+
+.rosso h3 {
+  color: #b82125;
+  font-size: 34px;
+  text-align: left;
+  padding-left: 135px;
+  padding-top: 30px;
+  margin-left: 30px;
+}
+
+.rosso p {
+  text-align: left;
+  padding-left: 135px;
+  padding-top: 30px;
+}
+
+.yazilar .buton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: bold;
+  border: 1px solid #b82125;
+  width: 130px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #b82125;
+  margin-left: 135px;
+  margin-top: 30px;
+}
+
+.hakkimda {
+  display: flex;
+  background-image: url("./assets/sitearkaplan.png"); /* Hakkımda arka plan resmi */
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  gap: 100px;
+}
+.navigation {
+  display: flex;
+  gap: 20px;
+}
+.resim img {
+  width: 350px;
+}
+
+.hakkimdabilgiler h2 {
+  font-size: 42px;
+  color: #ffffff;
+}
+
+.hakkimda p {
+  color: #ffffff;
+  width: 650px;
+  margin-top: 30px;
+  background-color: transparent;
+  background-color: black;
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.hakkimda .buton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: bold;
+  border: 1px solid #1534e2;
+  width: 130px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #1534e2;
+  margin-top: 30px;
+  color: #ffffff;
+}
+
+.library-container {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.library-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+.imageHakkinda {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("assets/rosso çizim site için.png");
+}
+.library-info {
+  flex: 2;
+  border-right: 1px solid #dee2e6;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.library-info h1 {
+  font-size: 2rem;
+  color: #343a40;
+  margin: 0 0 15px;
+}
+
+.library-info p {
+  font-size: 1.1rem;
+  color: #495057;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.code-container {
+  background-color: #f1f3f5;
+  border-radius: 0.5rem;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+  overflow-x: auto;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  display: block;
+  overflow-x: auto;
+}
+
+.library-image {
+  flex: 1;
+  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.library-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  background-color: #0b0a0a;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottomlink {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.bottomlink a {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.creator {
+  margin-top: 10px;
+}
+
+.anasayfa-content {
+  flex: 1;
+}
+
+/* Genel kapsayıcı */
+.library-container {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+
+.code-editor {
+  flex: 1;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 10px;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tab-button.active {
+  background: #fff;
+  border-color: #ccc;
+  border-bottom: 1px solid #fff;
+}
+
+.code-editor-content {
+  flex: 1;
+  position: relative;
+}
+
+.run-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.code-output {
+  flex: 1;
+  padding: 10px;
+  border-left: 1px solid #ccc;
+  background-color: #fff;
+  overflow: hidden;
+}
